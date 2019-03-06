@@ -54,5 +54,17 @@ function  validateEmail() {
 }
 
 function validatePhone() {
+  // grab element
+  const phone = document.getElementById('phone');
+  // regular expression ()
+  const re = /^(\(?\d{3}\)?)?[-. ]?\d{3}[-. ]?\d{4}$/
 
+  // if the value in the form does not match re parameters
+  if(!re.test(phone.value)) {
+    // add is-invalid class to the element
+    phone.classList.add('is-invalid');
+    // if it matches, make sure is-invalid class is removed
+  } else {
+    phone.classList.remove('is-invalid');
+  }
 }
